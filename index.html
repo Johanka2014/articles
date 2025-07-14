@@ -163,63 +163,90 @@
 
             <!-- Slide 5: Reading Practice -->
             <div id="slide-5" class="card slide-hidden w-full slide-box p-6 md:p-12">
-                <h2 class="text-3xl font-bold text-center mb-6 text-gray-800">Reading Practice: Article Correction</h2>
-                <p class="text-center mb-4">Read the text and correct the article mistakes. Type the correct article in the box.</p>
-                <div id="reading-exercise" class="text-lg leading-relaxed bg-gray-50 p-6 rounded-lg border border-gray-300 shadow-md">
-                    <p>
-                        Yesterday, police arrested <span class="correction-wrapper"><input type="text" data-answer="a" class="quiz-input w-8"></span> man in connection with 
-                        <span class="correction-wrapper"><input type="text" data-answer="a" class="quiz-input w-8"></span> robbery. <span class="correction-wrapper"><input type="text" data-answer="The" class="quiz-input w-10"></span> man was caught near 
-                        <span class="correction-wrapper"><input type="text" data-answer="the" class="quiz-input w-10"></span> bank. He had <span class="correction-wrapper"><input type="text" data-answer="a" class="quiz-input w-8"></span> large bag with him. Local residents expressed concern about 
-                        crime in <span class="correction-wrapper"><input type="text" data-answer="the" class="quiz-input w-10"></span> area.
-                    </p>
+                <h2 class="text-3xl font-bold text-center mb-2 text-gray-800">Reading Practice: Article Correction</h2>
+                <p class="text-center mb-8">Read the text and correct the article mistakes. Type the correct article in the box.</p>
+                <div class="flex flex-col md:flex-row items-center gap-8">
+                    <div class="md:w-1/2 w-full mt-8 md:mt-0">
+                        <img src="https://johanka2014.github.io/articles/bank_robber.png" alt="An illustration of a bank robber." class="rounded-lg shadow-xl w-full h-auto">
+                    </div>
+                    <div class="md:w-1/2 w-full">
+                        <div id="reading-exercise" class="text-lg leading-relaxed bg-gray-50 p-6 rounded-lg border border-gray-300 shadow-md">
+                            <p>
+                                Yesterday, police arrested <span class="correction-wrapper"><input type="text" data-answer="a" class="quiz-input w-8"></span> man in connection with 
+                                <span class="correction-wrapper"><input type="text" data-answer="a" class="quiz-input w-8"></span> robbery. <span class="correction-wrapper"><input type="text" data-answer="The" class="quiz-input w-10"></span> man was caught near 
+                                <span class="correction-wrapper"><input type="text" data-answer="the" class="quiz-input w-10"></span> bank. He had <span class="correction-wrapper"><input type="text" data-answer="a" class="quiz-input w-8"></span> large bag with him. Local residents expressed concern about 
+                                crime in <span class="correction-wrapper"><input type="text" data-answer="the" class="quiz-input w-10"></span> area.
+                            </p>
+                        </div>
+                        <div class="text-center mt-6">
+                            <button id="check-reading-btn" class="bg-indigo-600 text-white font-bold py-2 px-6 rounded-lg hover:bg-indigo-700 transition-colors">Check Answers</button>
+                        </div>
+                         <div id="reading-feedback" class="text-center mt-4 font-semibold"></div>
+                    </div>
                 </div>
-                <div class="text-center mt-6">
-                    <button id="check-reading-btn" class="bg-indigo-600 text-white font-bold py-2 px-6 rounded-lg hover:bg-indigo-700 transition-colors">Check Answers</button>
-                </div>
-                 <div id="reading-feedback" class="text-center mt-4 font-semibold"></div>
             </div>
 
             <!-- Slide 6: Listening Practice -->
             <div id="slide-6" class="card slide-hidden w-full slide-box p-6 md:p-12">
-                <h2 class="text-3xl font-bold text-center mb-6 text-gray-800">Listening Practice: Fill the Gaps</h2>
-                <p class="text-center mb-4">Imagine you are listening to a dialogue. Fill in the blanks with 'a', 'an', or 'the'.</p>
-                <div id="listening-exercise" class="text-lg space-y-4 bg-gray-50 p-6 rounded-lg border border-gray-300 shadow-md">
-                    <p>"I'm planning <input type="text" data-answer="a" class="quiz-input w-8"> trip to Edinburgh next month."</p>
-                    <p>"Have you found <input type="text" data-answer="a" class="quiz-input w-8"> good hotel yet?"</p>
-                    <p>"I prefer staying in <input type="text" data-answer="X" placeholder="X" class="quiz-input w-8"> small independent hotels, not <input type="text" data-answer="the" class="quiz-input w-10"> big chains."</p>
-                    <p>"We visited <input type="text" data-answer="the" class="quiz-input w-10"> National Museum of Scotland last time."</p>
-                    <p>"It's <input type="text" data-answer="an" class="quiz-input w-8"> amazing city for history lovers."</p>
+                <h2 class="text-3xl font-bold text-center mb-2 text-gray-800">Listening Practice: Fill the Gaps</h2>
+                <p class="text-center mb-8">Imagine you are listening to a dialogue. Fill in the blanks with 'a', 'an', or 'the'.</p>
+                <div class="flex flex-col md:flex-row items-center gap-8">
+                    <div class="md:w-1/2 w-full">
+                        <div id="listening-exercise" class="text-lg space-y-4 bg-gray-50 p-6 rounded-lg border border-gray-300 shadow-md">
+                            <p>"I'm planning <input type="text" data-answer="a" class="quiz-input w-8"> trip to Edinburgh next month."</p>
+                            <p>"Have you found <input type="text" data-answer="a" class="quiz-input w-8"> good hotel yet?"</p>
+                            <p>"I prefer staying in <input type="text" data-answer="X" placeholder="X" class="quiz-input w-8"> small independent hotels, not <input type="text" data-answer="the" class="quiz-input w-10"> big chains."</p>
+                            <p>"We visited <input type="text" data-answer="the" class="quiz-input w-10"> National Museum of Scotland last time."</p>
+                            <p>"It's <input type="text" data-answer="an" class="quiz-input w-8"> amazing city for history lovers."</p>
+                        </div>
+                         <div class="text-center mt-6">
+                            <button id="check-listening-btn" class="bg-indigo-600 text-white font-bold py-2 px-6 rounded-lg hover:bg-indigo-700 transition-colors">Check Answers</button>
+                        </div>
+                        <div id="listening-feedback" class="text-center mt-4 font-semibold"></div>
+                        <p class="text-center text-sm mt-2 text-gray-600">(Use 'X' for no article)</p>
+                    </div>
+                    <div class="md:w-1/2 w-full mt-8 md:mt-0">
+                        <img src="https://johanka2014.github.io/articles/studying_with_headphones.png" alt="A person studying with headphones on." class="rounded-lg shadow-xl w-full h-auto">
+                    </div>
                 </div>
-                 <div class="text-center mt-6">
-                    <button id="check-listening-btn" class="bg-indigo-600 text-white font-bold py-2 px-6 rounded-lg hover:bg-indigo-700 transition-colors">Check Answers</button>
-                </div>
-                <div id="listening-feedback" class="text-center mt-4 font-semibold"></div>
-                <p class="text-center text-sm mt-2 text-gray-600">(Use 'X' for no article)</p>
             </div>
 
-            <!-- Slide 7: Free Practice -->
+            <!-- Slide 7: Free Practice (Task 1) -->
             <div id="slide-7" class="card slide-hidden w-full slide-box p-6 md:p-12">
-                <h2 class="text-3xl font-bold text-center mb-6 text-gray-800">Free Practice: Your Turn!</h2>
-                <div class="grid md:grid-cols-2 gap-8">
-                    <div class="bg-blue-50 p-6 rounded-lg">
+                <h2 class="text-3xl font-bold text-center mb-6 text-gray-800">Free Practice: Describe an Experience</h2>
+                <div class="flex flex-col md:flex-row items-center gap-8">
+                     <div class="md:w-1/2 w-full">
+                        <img src="https://johanka2014.github.io/articles/concert.png" alt="A crowd at a music concert." class="rounded-lg shadow-xl w-full h-auto">
+                    </div>
+                    <div class="md:w-1/2 w-full bg-blue-50 p-6 rounded-lg">
                         <h3 class="text-xl font-bold text-blue-700">Task 1: Describe a Recent Experience</h3>
                         <p class="mt-2 text-gray-700">Write 5-7 sentences about an interesting thing you did recently. Pay close attention to article use.</p>
                         <textarea class="mt-4 w-full p-2 border rounded-lg h-40" placeholder="e.g., I went to a fantastic concert last weekend. The concert was held in a huge stadium..."></textarea>
                     </div>
-                    <div class="bg-purple-50 p-6 rounded-lg">
+                </div>
+            </div>
+            
+            <!-- Slide 8: Free Practice (Task 2) -->
+            <div id="slide-8" class="card slide-hidden w-full slide-box p-6 md:p-12">
+                 <h2 class="text-3xl font-bold text-center mb-6 text-gray-800">Free Practice: Debate a Topic</h2>
+                 <div class="flex flex-col md:flex-row items-center gap-8">
+                    <div class="md:w-1/2 w-full bg-purple-50 p-6 rounded-lg h-full flex flex-col">
                         <h3 class="text-xl font-bold text-purple-700">Task 2: Debate a Topic</h3>
                          <p class="mt-2 text-gray-700">Write a short paragraph on one of these topics:</p>
                         <ul class="list-disc list-inside mt-2 text-gray-600">
                             <li>What is the best way to learn a new language?</li>
                             <li>Should governments focus more on environmental issues or economic growth?</li>
                         </ul>
-                        <textarea class="mt-4 w-full p-2 border rounded-lg h-40" placeholder="e.g., I believe the best way to learn a new language is..."></textarea>
+                        <textarea class="mt-4 w-full p-2 border rounded-lg h-40 flex-grow" placeholder="e.g., I believe the best way to learn a new language is..."></textarea>
+                    </div>
+                    <div class="md:w-1/2 w-full">
+                        <img src="https://johanka2014.github.io/articles/debate.png" alt="Two people debating." class="rounded-lg shadow-xl w-full h-auto">
                     </div>
                 </div>
             </div>
 
-            <!-- Slide 8: Conclusion -->
-            <div id="slide-8" class="card slide-hidden w-full slide-box p-6 md:p-12">
+            <!-- Slide 9: Conclusion -->
+            <div id="slide-9" class="card slide-hidden w-full slide-box p-6 md:p-12">
                 <h2 class="text-3xl font-bold text-center mb-6 text-gray-800">Conclusion & Next Steps</h2>
                 <div class="text-lg space-y-4">
                     <p class="p-4 bg-green-50 rounded-lg"><strong class="text-green-700">Key Takeaway:</strong> Article usage is nuanced; consistency and context are paramount.</p>
@@ -246,7 +273,7 @@
             <button id="prev-btn" class="bg-white/80 text-indigo-600 font-bold py-3 px-6 rounded-lg hover:bg-white transition-all shadow-md disabled:opacity-50 disabled:cursor-not-allowed">
                 &larr; Previous
             </button>
-            <div id="slide-counter" class="text-white font-semibold">1 / 8</div>
+            <div id="slide-counter" class="text-white font-semibold">1 / 9</div>
             <button id="next-btn" class="bg-white/80 text-indigo-600 font-bold py-3 px-6 rounded-lg hover:bg-white transition-all shadow-md disabled:opacity-50 disabled:cursor-not-allowed">
                 Next &rarr;
             </button>
@@ -255,115 +282,146 @@
     </div>
 
     <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const slides = document.querySelectorAll('.card');
-            const prevBtn = document.getElementById('prev-btn');
-            const nextBtn = document.getElementById('next-btn');
-            const slideCounter = document.getElementById('slide-counter');
-            let currentSlide = 0;
-            const totalSlides = slides.length;
+        // Wrap the entire script in an IIFE to create a private scope and avoid polluting the global namespace.
+        (function() {
+            document.addEventListener('DOMContentLoaded', () => {
+                // --- Variable Declarations ---
+                const slides = document.querySelectorAll('.card');
+                const prevBtn = document.getElementById('prev-btn');
+                const nextBtn = document.getElementById('next-btn');
+                const slideCounter = document.getElementById('slide-counter');
+                let currentSlide = 0;
+                const totalSlides = slides.length;
 
-            function updateButtons() {
-                prevBtn.disabled = currentSlide === 0;
-                nextBtn.disabled = currentSlide === totalSlides - 1;
-            }
+                // --- Event Handlers for Quizzes ---
+                // These are defined once and can be added/removed as needed.
+                const readingCheckHandler = () => {
+                    const exercise = document.getElementById('reading-exercise');
+                    const feedback = document.getElementById('reading-feedback');
+                    checkQuizAnswers(exercise, feedback, "Excellent! All answers are correct.", `You got {correct} out of {total} correct. Try again!`);
+                };
 
-            function showSlide(index, direction = 'next') {
-                slides.forEach((slide, i) => {
-                    slide.classList.remove('slide-active', 'slide-hidden', 'slide-hidden-left');
-                    if (i === index) {
-                        slide.classList.add('slide-active');
-                    } else {
-                        if (i < index) {
-                             slide.classList.add('slide-hidden-left');
+                const listeningCheckHandler = () => {
+                    const exercise = document.getElementById('listening-exercise');
+                    const feedback = document.getElementById('listening-feedback');
+                    checkQuizAnswers(exercise, feedback, "Perfect! All gaps filled correctly.", `You got {correct} out of {total} correct. Keep trying!`);
+                };
+
+                // --- Core Functions ---
+
+                /**
+                 * Generic function to check answers for a quiz section.
+                 * @param {HTMLElement} exerciseEl - The container element for the quiz.
+                 * @param {HTMLElement} feedbackEl - The element to display feedback in.
+                 * @param {string} successMsg - The message to show on 100% correct answers.
+                 * @param {string} errorMsgTemplate - The template for the error message.
+                 */
+                function checkQuizAnswers(exerciseEl, feedbackEl, successMsg, errorMsgTemplate) {
+                    const inputs = exerciseEl.querySelectorAll('input');
+                    let correctCount = 0;
+                    inputs.forEach(input => {
+                        const userAnswer = (input.value.trim().toLowerCase() || 'x');
+                        const correctAnswer = input.dataset.answer.toLowerCase();
+                        input.classList.remove('correct', 'incorrect');
+                        if (userAnswer === correctAnswer) {
+                            input.classList.add('correct');
+                            correctCount++;
                         } else {
-                             slide.classList.add('slide-hidden');
+                            input.classList.add('incorrect');
                         }
-                    }
-                });
-                slideCounter.textContent = `${index + 1} / ${totalSlides}`;
-                updateButtons();
-            }
-            
-            nextBtn.addEventListener('click', () => {
-                if (currentSlide < totalSlides - 1) {
-                    currentSlide++;
-                    showSlide(currentSlide, 'next');
-                }
-            });
+                    });
 
-            prevBtn.addEventListener('click', () => {
-                if (currentSlide > 0) {
-                    currentSlide--;
-                    showSlide(currentSlide, 'prev');
-                }
-            });
-
-            // --- Interactive Exercises ---
-
-            // Reading Exercise
-            const checkReadingBtn = document.getElementById('check-reading-btn');
-            const readingExercise = document.getElementById('reading-exercise');
-            const readingFeedback = document.getElementById('reading-feedback');
-
-            checkReadingBtn.addEventListener('click', () => {
-                const inputs = readingExercise.querySelectorAll('input');
-                let correctCount = 0;
-                inputs.forEach(input => {
-                    const userAnswer = input.value.trim().toLowerCase();
-                    const correctAnswer = input.dataset.answer.toLowerCase();
-                    input.classList.remove('correct', 'incorrect');
-                    if (userAnswer === correctAnswer) {
-                        input.classList.add('correct');
-                        correctCount++;
+                    if (correctCount === inputs.length) {
+                        feedbackEl.textContent = successMsg;
+                        feedbackEl.className = 'text-center mt-4 font-semibold text-green-600';
                     } else {
-                        input.classList.add('incorrect');
+                        const errorMsg = errorMsgTemplate.replace('{correct}', correctCount).replace('{total}', inputs.length);
+                        feedbackEl.textContent = errorMsg;
+                        feedbackEl.className = 'text-center mt-4 font-semibold text-red-600';
+                    }
+                }
+
+                /**
+                 * Cleans up event listeners for a specific slide before it's hidden.
+                 * @param {number} slideIndex - The index of the slide to clean up.
+                 */
+                function cleanupSlide(slideIndex) {
+                    if (slideIndex === 4) { // Reading Practice slide is at index 4
+                        const btn = document.getElementById('check-reading-btn');
+                        if (btn) btn.removeEventListener('click', readingCheckHandler);
+                    }
+                    if (slideIndex === 5) { // Listening Practice slide is at index 5
+                        const btn = document.getElementById('check-listening-btn');
+                        if (btn) btn.removeEventListener('click', listeningCheckHandler);
+                    }
+                }
+
+                /**
+                 * Sets up event listeners for a specific slide when it becomes active.
+                 * @param {number} slideIndex - The index of the slide to set up.
+                 */
+                function setupSlide(slideIndex) {
+                    if (slideIndex === 4) { // Reading Practice slide
+                        const btn = document.getElementById('check-reading-btn');
+                        if (btn) btn.addEventListener('click', readingCheckHandler);
+                    }
+                    if (slideIndex === 5) { // Listening Practice slide
+                        const btn = document.getElementById('check-listening-btn');
+                        if (btn) btn.addEventListener('click', listeningCheckHandler);
+                    }
+                }
+
+                /**
+                 * Main function to display a specific slide and manage state.
+                 * @param {number} index - The index of the slide to show.
+                 */
+                function showSlide(index) {
+                    // 1. Cleanup the outgoing slide
+                    cleanupSlide(currentSlide);
+
+                    // 2. Update current slide index
+                    currentSlide = index;
+
+                    // 3. Update UI for all slides
+                    slides.forEach((slide, i) => {
+                        slide.classList.remove('slide-active', 'slide-hidden', 'slide-hidden-left');
+                        if (i === currentSlide) {
+                            slide.classList.add('slide-active');
+                        } else if (i < currentSlide) {
+                            slide.classList.add('slide-hidden-left');
+                        } else {
+                            slide.classList.add('slide-hidden');
+                        }
+                    });
+
+                    // 4. Update navigation state
+                    slideCounter.textContent = `${currentSlide + 1} / ${totalSlides}`;
+                    prevBtn.disabled = currentSlide === 0;
+                    nextBtn.disabled = currentSlide === totalSlides - 1;
+
+                    // 5. Setup the incoming slide
+                    setupSlide(currentSlide);
+                }
+                
+                // --- Initial Setup ---
+                
+                // Attach main navigation listeners
+                nextBtn.addEventListener('click', () => {
+                    if (currentSlide < totalSlides - 1) {
+                        showSlide(currentSlide + 1);
                     }
                 });
-                
-                if(correctCount === inputs.length) {
-                    readingFeedback.textContent = "Excellent! All answers are correct.";
-                    readingFeedback.className = 'text-center mt-4 font-semibold text-green-600';
-                } else {
-                    readingFeedback.textContent = `You got ${correctCount} out of ${inputs.length} correct. Try again!`;
-                    readingFeedback.className = 'text-center mt-4 font-semibold text-red-600';
-                }
-            });
 
-            // Listening Exercise
-            const checkListeningBtn = document.getElementById('check-listening-btn');
-            const listeningExercise = document.getElementById('listening-exercise');
-            const listeningFeedback = document.getElementById('listening-feedback');
-
-            checkListeningBtn.addEventListener('click', () => {
-                const inputs = listeningExercise.querySelectorAll('input');
-                let correctCount = 0;
-                inputs.forEach(input => {
-                    const userAnswer = input.value.trim().toLowerCase() || 'x';
-                    const correctAnswer = input.dataset.answer.toLowerCase();
-                    input.classList.remove('correct', 'incorrect');
-                    if (userAnswer === correctAnswer) {
-                        input.classList.add('correct');
-                        correctCount++;
-                    } else {
-                        input.classList.add('incorrect');
+                prevBtn.addEventListener('click', () => {
+                    if (currentSlide > 0) {
+                        showSlide(currentSlide - 1);
                     }
                 });
-                
-                 if(correctCount === inputs.length) {
-                    listeningFeedback.textContent = "Perfect! All gaps filled correctly.";
-                    listeningFeedback.className = 'text-center mt-4 font-semibold text-green-600';
-                } else {
-                    listeningFeedback.textContent = `You got ${correctCount} out of ${inputs.length} correct. Keep trying!`;
-                    listeningFeedback.className = 'text-center mt-4 font-semibold text-red-600';
-                }
+
+                // Show the first slide and set up its listeners
+                showSlide(0);
             });
-
-
-            // Initialize
-            showSlide(currentSlide);
-        });
+        })();
     </script>
 </body>
 </html>
-

@@ -50,6 +50,7 @@
             border-bottom: 2px solid #ccc;
             background-color: transparent;
             text-align: center;
+            width: 3rem;
         }
         .quiz-input:focus {
             outline: none;
@@ -61,13 +62,34 @@
         .incorrect {
             border-bottom: 2px solid #f87171;
         }
+        /* Styles for the circle quiz */
+        .choice-group .choice {
+            cursor: pointer;
+            padding: 2px 6px;
+            border-radius: 9999px;
+            transition: background-color 0.2s, color 0.2s;
+            border: 1px solid transparent;
+        }
+        .choice-group .choice.selected {
+            background-color: #4f46e5;
+            color: white;
+            border-color: #3730a3;
+        }
+        .choice-group .choice.correct-answer {
+             background-color: #22c55e;
+             color: white;
+        }
+        .choice-group .choice.incorrect-answer {
+            background-color: #ef4444;
+            color: white;
+        }
     </style>
 </head>
 <body class="min-h-screen flex items-center justify-center p-4">
 
     <div class="w-full max-w-5xl mx-auto">
         <!-- Main Content -->
-        <main id="presentation-container" class="card-container relative overflow-hidden min-h-[600px] flex items-center">
+        <main id="presentation-container" class="card-container relative overflow-hidden min-h-[650px] flex items-center">
 
             <!-- Slide 1: Title -->
             <div id="slide-1" class="card slide-active w-full p-6 md:p-12">
@@ -161,8 +183,54 @@
                  </div>
             </div>
 
-            <!-- Slide 5: Reading Practice -->
+            <!-- Slide 5: Interactive Quiz -->
             <div id="slide-5" class="card slide-hidden w-full slide-box p-6 md:p-12">
+                <h2 class="text-3xl font-bold text-center mb-6 text-gray-800">Interactive Quiz: Fill the Gaps</h2>
+                <div id="interactive-quiz-exercise" class="text-lg space-y-3 bg-gray-50 p-6 rounded-lg border border-gray-200 shadow-sm">
+                    <ol class="list-decimal list-inside space-y-4">
+                        <li>We enjoyed our holiday. <input type="text" data-answer="The" class="quiz-input"> hotel was very nice.</li>
+                        <li>'Can I ask <input type="text" data-answer="a" class="quiz-input"> question?' 'Of course. What do you want to ask?'</li>
+                        <li>You look very tired. You need <input type="text" data-answer="a" class="quiz-input"> holiday.</li>
+                        <li>'Where's Tom?' 'He's in <input type="text" data-answer="the" class="quiz-input"> bathroom.'</li>
+                        <li>Jane is <input type="text" data-answer="an" class="quiz-input"> interesting person. You must meet her.</li>
+                        <li>A: Excuse me, can you tell me how to get to <input type="text" data-answer="the" class="quiz-input"> city centre? <br>B: Yes, go straight on and take <input type="text" data-answer="the" class="quiz-input"> next turning left.</li>
+                        <li>A: Shall we go out for <input type="text" data-answer="a" class="quiz-input"> meal this evening? <br>B: Yes, that's <input type="text" data-answer="a" class="quiz-input"> good idea.</li>
+                        <li>It's <input type="text" data-answer="a" class="quiz-input"> nice morning. Let's go for <input type="text" data-answer="a" class="quiz-input"> walk.</li>
+                        <li>Amanda is <input type="text" data-answer="a" class="quiz-input"> student. When she finishes her studies, she wants to be <input type="text" data-answer="a" class="quiz-input"> journalist. She lives with two friends in <input type="text" data-answer="a" class="quiz-input"> flat near <input type="text" data-answer="the" class="quiz-input"> college where she is studying. <input type="text" data-answer="The" class="quiz-input"> flat is small but she likes it.</li>
+                        <li>Peter and Mary have got two children, <input type="text" data-answer="a" class="quiz-input"> boy and <input type="text" data-answer="a" class="quiz-input"> girl. <input type="text" data-answer="The" class="quiz-input"> boy is seven years old and <input type="text" data-answer="the" class="quiz-input"> girl is three. Peter works in <input type="text" data-answer="a" class="quiz-input"> factory. Mary hasn't got <input type="text" data-answer="a" class="quiz-input"> job at the moment.</li>
+                    </ol>
+                </div>
+                <div class="text-center mt-6">
+                    <button id="check-quiz-btn" class="bg-indigo-600 text-white font-bold py-2 px-6 rounded-lg hover:bg-indigo-700 transition-colors">Check Answers</button>
+                </div>
+                <div id="quiz-feedback" class="text-center mt-4 font-semibold"></div>
+            </div>
+
+            <!-- Slide 6: Circle the Answer Quiz -->
+            <div id="slide-6" class="card slide-hidden w-full slide-box p-6 md:p-12">
+                <h2 class="text-3xl font-bold text-center mb-6 text-gray-800">Practice: Circle the Correct Answer</h2>
+                <div id="circle-quiz-exercise" class="text-lg space-y-3 bg-gray-50 p-6 rounded-lg border border-gray-200 shadow-sm">
+                    <ol class="list-decimal list-inside space-y-3">
+                        <li>Did you lock <span class="choice-group"><span class="choice">door</span> / <span class="choice" data-correct="true">the door</span></span> when you left <span class="choice-group"><span class="choice">a house</span> / <span class="choice" data-correct="true">the house</span></span>?</li>
+                        <li>My brother is married to <span class="choice-group"><span class="choice">Russian</span> / <span class="choice" data-correct="true">a Russian</span></span>. She's <span class="choice-group"><span class="choice">lawyer</span> / <span class="choice" data-correct="true">a lawyer</span></span>.</li>
+                        <li>We go to <span class="choice-group"><span class="choice">theatre</span> / <span class="choice" data-correct="true">the theatre</span></span> about once <span class="choice-group"><span class="choice" data-correct="true">a month</span> / <span class="choice">the month</span></span>.</li>
+                        <li>What <span class="choice-group"><span class="choice">beautiful</span> / <span class="choice" data-correct="true">a beautiful</span></span> day! Let's have breakfast on <span class="choice-group"><span class="choice">a terrace</span> / <span class="choice" data-correct="true">the terrace</span></span>.</li>
+                        <li>I love <span class="choice-group"><span class="choice" data-correct="true">classical music</span> / <span class="choice">the classical music</span></span> and <span class="choice-group"><span class="choice" data-correct="true">Italian food</span> / <span class="choice">the Italian food</span></span>.</li>
+                        <li>Who is <span class="choice-group"><span class="choice">a girl</span> / <span class="choice" data-correct="true">the girl</span></span> by <span class="choice-group"><span class="choice">a window</span> / <span class="choice" data-correct="true">the window</span></span>?</li>
+                        <li>I leave <span class="choice-group"><span class="choice" data-correct="true">home</span> / <span class="choice">the home</span></span> at 8.00 and get to <span class="choice-group"><span class="choice" data-correct="true">work</span> / <span class="choice">the work</span></span> at 9.00.</li>
+                        <li><span class="choice-group"><span class="choice" data-correct="true">Men</span> / <span class="choice">The men</span></span> aren't normally as sensitive as <span class="choice-group"><span class="choice" data-correct="true">women</span> / <span class="choice">the women</span></span>.</li>
+                        <li>We usually have <span class="choice-group"><span class="choice" data-correct="true">dinner</span> / <span class="choice">the dinner</span></span> at 8.00 and go to <span class="choice-group"><span class="choice" data-correct="true">bed</span> / <span class="choice">the bed</span></span> at about 11.30.</li>
+                        <li>She has <span class="choice-group"><span class="choice" data-correct="true">a lovely face</span> / <span class="choice">the lovely face</span></span> and <span class="choice-group"><span class="choice">the attractive eyes</span> / <span class="choice" data-correct="true">attractive eyes</span></span>.</li>
+                    </ol>
+                </div>
+                 <div class="text-center mt-6">
+                    <button id="check-circle-quiz-btn" class="bg-indigo-600 text-white font-bold py-2 px-6 rounded-lg hover:bg-indigo-700 transition-colors">Check Answers</button>
+                </div>
+                <div id="circle-quiz-feedback" class="text-center mt-4 font-semibold"></div>
+            </div>
+
+            <!-- Slide 7: Reading Practice -->
+            <div id="slide-7" class="card slide-hidden w-full slide-box p-6 md:p-12">
                 <h2 class="text-3xl font-bold text-center mb-2 text-gray-800">Reading Practice: Article Correction</h2>
                 <p class="text-center mb-8">Read the text and correct the article mistakes. Type the correct article in the box.</p>
                 <div class="flex flex-col md:flex-row items-center gap-8">
@@ -172,10 +240,10 @@
                     <div class="md:w-1/2 w-full">
                         <div id="reading-exercise" class="text-lg leading-relaxed bg-gray-50 p-6 rounded-lg border border-gray-300 shadow-md">
                             <p>
-                                Yesterday, police arrested <span class="correction-wrapper"><input type="text" data-answer="a" class="quiz-input w-8"></span> man in connection with 
-                                <span class="correction-wrapper"><input type="text" data-answer="a" class="quiz-input w-8"></span> robbery. <span class="correction-wrapper"><input type="text" data-answer="The" class="quiz-input w-10"></span> man was caught near 
-                                <span class="correction-wrapper"><input type="text" data-answer="the" class="quiz-input w-10"></span> bank. He had <span class="correction-wrapper"><input type="text" data-answer="a" class="quiz-input w-8"></span> large bag with him. Local residents expressed concern about 
-                                crime in <span class="correction-wrapper"><input type="text" data-answer="the" class="quiz-input w-10"></span> area.
+                                Yesterday, police arrested <span class="correction-wrapper"><input type="text" data-answer="a" class="quiz-input"></span> man in connection with 
+                                <span class="correction-wrapper"><input type="text" data-answer="a" class="quiz-input"></span> robbery. <span class="correction-wrapper"><input type="text" data-answer="The" class="quiz-input"></span> man was caught near 
+                                <span class="correction-wrapper"><input type="text" data-answer="the" class="quiz-input"></span> bank. He had <span class="correction-wrapper"><input type="text" data-answer="a" class="quiz-input"></span> large bag with him. Local residents expressed concern about 
+                                crime in <span class="correction-wrapper"><input type="text" data-answer="the" class="quiz-input"></span> area.
                             </p>
                         </div>
                         <div class="text-center mt-6">
@@ -186,18 +254,18 @@
                 </div>
             </div>
 
-            <!-- Slide 6: Listening Practice -->
-            <div id="slide-6" class="card slide-hidden w-full slide-box p-6 md:p-12">
+            <!-- Slide 8: Listening Practice -->
+            <div id="slide-8" class="card slide-hidden w-full slide-box p-6 md:p-12">
                 <h2 class="text-3xl font-bold text-center mb-2 text-gray-800">Listening Practice: Fill the Gaps</h2>
                 <p class="text-center mb-8">Imagine you are listening to a dialogue. Fill in the blanks with 'a', 'an', or 'the'.</p>
                 <div class="flex flex-col md:flex-row items-center gap-8">
                     <div class="md:w-1/2 w-full">
                         <div id="listening-exercise" class="text-lg space-y-4 bg-gray-50 p-6 rounded-lg border border-gray-300 shadow-md">
-                            <p>"I'm planning <input type="text" data-answer="a" class="quiz-input w-8"> trip to Edinburgh next month."</p>
-                            <p>"Have you found <input type="text" data-answer="a" class="quiz-input w-8"> good hotel yet?"</p>
-                            <p>"I prefer staying in <input type="text" data-answer="X" placeholder="X" class="quiz-input w-8"> small independent hotels, not <input type="text" data-answer="the" class="quiz-input w-10"> big chains."</p>
-                            <p>"We visited <input type="text" data-answer="the" class="quiz-input w-10"> National Museum of Scotland last time."</p>
-                            <p>"It's <input type="text" data-answer="an" class="quiz-input w-8"> amazing city for history lovers."</p>
+                            <p>"I'm planning <input type="text" data-answer="a" class="quiz-input"> trip to Edinburgh next month."</p>
+                            <p>"Have you found <input type="text" data-answer="a" class="quiz-input"> good hotel yet?"</p>
+                            <p>"I prefer staying in <input type="text" data-answer="X" placeholder="X" class="quiz-input"> small independent hotels, not <input type="text" data-answer="the" class="quiz-input"> big chains."</p>
+                            <p>"We visited <input type="text" data-answer="the" class="quiz-input"> National Museum of Scotland last time."</p>
+                            <p>"It's <input type="text" data-answer="an" class="quiz-input"> amazing city for history lovers."</p>
                         </div>
                          <div class="text-center mt-6">
                             <button id="check-listening-btn" class="bg-indigo-600 text-white font-bold py-2 px-6 rounded-lg hover:bg-indigo-700 transition-colors">Check Answers</button>
@@ -211,8 +279,8 @@
                 </div>
             </div>
 
-            <!-- Slide 7: Free Practice (Task 1) -->
-            <div id="slide-7" class="card slide-hidden w-full slide-box p-6 md:p-12">
+            <!-- Slide 9: Free Practice (Task 1) -->
+            <div id="slide-9" class="card slide-hidden w-full slide-box p-6 md:p-12">
                 <h2 class="text-3xl font-bold text-center mb-6 text-gray-800">Free Practice: Describe an Experience</h2>
                 <div class="flex flex-col md:flex-row items-center gap-8">
                      <div class="md:w-1/2 w-full">
@@ -226,8 +294,8 @@
                 </div>
             </div>
             
-            <!-- Slide 8: Free Practice (Task 2) -->
-            <div id="slide-8" class="card slide-hidden w-full slide-box p-6 md:p-12">
+            <!-- Slide 10: Free Practice (Task 2) -->
+            <div id="slide-10" class="card slide-hidden w-full slide-box p-6 md:p-12">
                  <h2 class="text-3xl font-bold text-center mb-6 text-gray-800">Free Practice: Debate a Topic</h2>
                  <div class="flex flex-col md:flex-row items-center gap-8">
                     <div class="md:w-1/2 w-full bg-purple-50 p-6 rounded-lg h-full flex flex-col">
@@ -245,8 +313,8 @@
                 </div>
             </div>
 
-            <!-- Slide 9: Conclusion -->
-            <div id="slide-9" class="card slide-hidden w-full slide-box p-6 md:p-12">
+            <!-- Slide 11: Conclusion -->
+            <div id="slide-11" class="card slide-hidden w-full slide-box p-6 md:p-12">
                 <h2 class="text-3xl font-bold text-center mb-6 text-gray-800">Conclusion & Next Steps</h2>
                 <div class="text-lg space-y-4">
                     <p class="p-4 bg-green-50 rounded-lg"><strong class="text-green-700">Key Takeaway:</strong> Article usage is nuanced; consistency and context are paramount.</p>
@@ -273,7 +341,7 @@
             <button id="prev-btn" class="bg-white/80 text-indigo-600 font-bold py-3 px-6 rounded-lg hover:bg-white transition-all shadow-md disabled:opacity-50 disabled:cursor-not-allowed">
                 &larr; Previous
             </button>
-            <div id="slide-counter" class="text-white font-semibold">1 / 9</div>
+            <div id="slide-counter" class="text-white font-semibold">1 / 11</div>
             <button id="next-btn" class="bg-white/80 text-indigo-600 font-bold py-3 px-6 rounded-lg hover:bg-white transition-all shadow-md disabled:opacity-50 disabled:cursor-not-allowed">
                 Next &rarr;
             </button>
@@ -294,7 +362,6 @@
                 const totalSlides = slides.length;
 
                 // --- Event Handlers for Quizzes ---
-                // These are defined once and can be added/removed as needed.
                 const readingCheckHandler = () => {
                     const exercise = document.getElementById('reading-exercise');
                     const feedback = document.getElementById('reading-feedback');
@@ -307,14 +374,22 @@
                     checkQuizAnswers(exercise, feedback, "Perfect! All gaps filled correctly.", `You got {correct} out of {total} correct. Keep trying!`);
                 };
 
+                const quizCheckHandler = () => {
+                    const exercise = document.getElementById('interactive-quiz-exercise');
+                    const feedback = document.getElementById('quiz-feedback');
+                    checkQuizAnswers(exercise, feedback, "Great job! All answers are correct.", `You got {correct} out of {total} correct. Give it another go!`);
+                };
+
+                const circleQuizCheckHandler = () => {
+                    const exercise = document.getElementById('circle-quiz-exercise');
+                    const feedback = document.getElementById('circle-quiz-feedback');
+                    checkCircleQuizAnswers(exercise, feedback);
+                };
+
                 // --- Core Functions ---
 
                 /**
-                 * Generic function to check answers for a quiz section.
-                 * @param {HTMLElement} exerciseEl - The container element for the quiz.
-                 * @param {HTMLElement} feedbackEl - The element to display feedback in.
-                 * @param {string} successMsg - The message to show on 100% correct answers.
-                 * @param {string} errorMsgTemplate - The template for the error message.
+                 * Generic function to check answers for text input quizzes.
                  */
                 function checkQuizAnswers(exerciseEl, feedbackEl, successMsg, errorMsgTemplate) {
                     const inputs = exerciseEl.querySelectorAll('input');
@@ -342,47 +417,110 @@
                 }
 
                 /**
-                 * Cleans up event listeners for a specific slide before it's hidden.
-                 * @param {number} slideIndex - The index of the slide to clean up.
+                 * Function to check answers for the circle/choice quiz.
+                 */
+                function checkCircleQuizAnswers(exerciseEl, feedbackEl) {
+                    const choiceGroups = exerciseEl.querySelectorAll('.choice-group');
+                    let correctCount = 0;
+                    choiceGroups.forEach(group => {
+                        const selected = group.querySelector('.choice.selected');
+                        const choices = group.querySelectorAll('.choice');
+                        
+                        // Reset styles
+                        choices.forEach(c => {
+                            c.classList.remove('correct-answer', 'incorrect-answer');
+                        });
+
+                        if (selected) {
+                            if (selected.hasAttribute('data-correct')) {
+                                selected.classList.add('correct-answer');
+                                correctCount++;
+                            } else {
+                                selected.classList.add('incorrect-answer');
+                            }
+                        }
+                    });
+
+                    if (correctCount === choiceGroups.length) {
+                        feedbackEl.textContent = "Flawless! You got everything right!";
+                        feedbackEl.className = 'text-center mt-4 font-semibold text-green-600';
+                    } else {
+                        feedbackEl.textContent = `You got ${correctCount} out of ${choiceGroups.length} correct. Review the red answers and try again!`;
+                        feedbackEl.className = 'text-center mt-4 font-semibold text-red-600';
+                    }
+                }
+                
+                /**
+                 * Handles clicks within a circle quiz to select an answer.
+                 */
+                function handleChoiceClick(event) {
+                    if (event.target.classList.contains('choice')) {
+                        const group = event.target.parentElement;
+                        // Deselect other choices in the same group
+                        group.querySelectorAll('.choice').forEach(choice => {
+                            choice.classList.remove('selected');
+                        });
+                        // Select the clicked choice
+                        event.target.classList.add('selected');
+                    }
+                }
+
+
+                /**
+                 * Cleans up event listeners for a specific slide.
                  */
                 function cleanupSlide(slideIndex) {
-                    if (slideIndex === 4) { // Reading Practice slide is at index 4
+                    if (slideIndex === 4) { // Fill the Gaps Quiz
+                        const btn = document.getElementById('check-quiz-btn');
+                        if (btn) btn.removeEventListener('click', quizCheckHandler);
+                    }
+                    if (slideIndex === 5) { // Circle the Answer Quiz
+                        const btn = document.getElementById('check-circle-quiz-btn');
+                        if (btn) btn.removeEventListener('click', circleQuizCheckHandler);
+                        const exercise = document.getElementById('circle-quiz-exercise');
+                        if(exercise) exercise.removeEventListener('click', handleChoiceClick);
+                    }
+                    if (slideIndex === 6) { // Reading Practice
                         const btn = document.getElementById('check-reading-btn');
                         if (btn) btn.removeEventListener('click', readingCheckHandler);
                     }
-                    if (slideIndex === 5) { // Listening Practice slide is at index 5
+                    if (slideIndex === 7) { // Listening Practice
                         const btn = document.getElementById('check-listening-btn');
                         if (btn) btn.removeEventListener('click', listeningCheckHandler);
                     }
                 }
 
                 /**
-                 * Sets up event listeners for a specific slide when it becomes active.
-                 * @param {number} slideIndex - The index of the slide to set up.
+                 * Sets up event listeners for a specific slide.
                  */
                 function setupSlide(slideIndex) {
-                    if (slideIndex === 4) { // Reading Practice slide
+                    if (slideIndex === 4) { // Fill the Gaps Quiz
+                        const btn = document.getElementById('check-quiz-btn');
+                        if (btn) btn.addEventListener('click', quizCheckHandler);
+                    }
+                    if (slideIndex === 5) { // Circle the Answer Quiz
+                        const btn = document.getElementById('check-circle-quiz-btn');
+                        if (btn) btn.addEventListener('click', circleQuizCheckHandler);
+                        const exercise = document.getElementById('circle-quiz-exercise');
+                        if(exercise) exercise.addEventListener('click', handleChoiceClick);
+                    }
+                    if (slideIndex === 6) { // Reading Practice
                         const btn = document.getElementById('check-reading-btn');
                         if (btn) btn.addEventListener('click', readingCheckHandler);
                     }
-                    if (slideIndex === 5) { // Listening Practice slide
+                    if (slideIndex === 7) { // Listening Practice
                         const btn = document.getElementById('check-listening-btn');
                         if (btn) btn.addEventListener('click', listeningCheckHandler);
                     }
                 }
 
                 /**
-                 * Main function to display a specific slide and manage state.
-                 * @param {number} index - The index of the slide to show.
+                 * Main function to display a specific slide.
                  */
                 function showSlide(index) {
-                    // 1. Cleanup the outgoing slide
                     cleanupSlide(currentSlide);
-
-                    // 2. Update current slide index
                     currentSlide = index;
 
-                    // 3. Update UI for all slides
                     slides.forEach((slide, i) => {
                         slide.classList.remove('slide-active', 'slide-hidden', 'slide-hidden-left');
                         if (i === currentSlide) {
@@ -394,18 +532,14 @@
                         }
                     });
 
-                    // 4. Update navigation state
                     slideCounter.textContent = `${currentSlide + 1} / ${totalSlides}`;
                     prevBtn.disabled = currentSlide === 0;
                     nextBtn.disabled = currentSlide === totalSlides - 1;
 
-                    // 5. Setup the incoming slide
                     setupSlide(currentSlide);
                 }
                 
                 // --- Initial Setup ---
-                
-                // Attach main navigation listeners
                 nextBtn.addEventListener('click', () => {
                     if (currentSlide < totalSlides - 1) {
                         showSlide(currentSlide + 1);
@@ -418,10 +552,10 @@
                     }
                 });
 
-                // Show the first slide and set up its listeners
                 showSlide(0);
             });
         })();
     </script>
 </body>
 </html>
+

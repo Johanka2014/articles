@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mastering English Articles: A, An, and The</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background: linear-gradient(135deg, #e0e7ff, #c7d2fe);
+            color: #333;
+        }
+        .card-container {
+            perspective: 1000px;
+        }
+        .card {
+            transition: transform 0.6s, opacity 0.6s;
+            backface-visibility: hidden;
+        }
+        .slide-box {
+            background-color: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(4px);
+            border-radius: 1rem; /* rounded-2xl */
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+        .slide-hidden {
+            transform: translateX(100%) rotateY(-20deg);
+            opacity: 0;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+        }
+        .slide-hidden-left {
+            transform: translateX(-100%) rotateY(20deg);
+            opacity: 0;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+        }
+        .slide-active {
+            transform: translateX(0) rotateY(0);
+            opacity: 1;
+            position: relative;
+        }
+        .quiz-input {
+            border-bottom: 2px solid #ccc;
+            background-color: transparent;
+            text-align: center;
+        }
+        .quiz-input:focus {
+            outline: none;
+            border-bottom: 2px solid #3f2b96;
+        }
+        .correct {
+            border-bottom: 2px solid #4ade80;
+        }
+        .incorrect {
+            border-bottom: 2px solid #f87171;
+        }
+    </style>
+</head>
+<body class="min-h-screen flex items-center justify-center p-4">
+
+    <div class="w-full max-w-5xl mx-auto">
+        <!-- Main Content -->
+        <main id="presentation-container" class="card-container relative overflow-hidden min-h-[600px] flex items-center">
+
+            <!-- Slide 1: Title -->
+            <div id="slide-1" class="card slide-active w-full p-6 md:p-12">
+                <div class="flex flex-col md:flex-row items-center gap-8 md:gap-12">
+                    <!-- Image Column -->
+                    <div class="md:w-1/2">
+                        <img src="https://johanka2014.github.io/articles/articles_image.png" alt="Illustration showing 'a', 'an', and 'the' with examples" class="rounded-lg shadow-xl w-full h-auto">
+                    </div>
+                    <!-- Text Column -->
+                    <div class="md:w-1/2 text-center md:text-left">
+                        <h1 class="text-4xl md:text-5xl font-bold text-gray-800">Mastering English Articles</h1>
+                        <p class="text-2xl md:text-3xl text-indigo-600 mt-2">A, An, and The</p>
+                        <div class="mt-8 text-lg text-gray-700 space-y-3">
+                            <p><strong class="text-indigo-700">Why Articles Matter:</strong> Essential for clarity and natural English communication.</p>
+                            <p><strong class="text-indigo-700">Target Audience:</strong> Intermediate to advanced (B1-C1) English learners aiming for precision.</p>
+                            <p><strong class="text-indigo-700">Lesson Goal:</strong> Identify and correct frequent errors in article usage, enhancing fluency.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slide 2: The Fundamentals -->
+            <div id="slide-2" class="card slide-hidden w-full slide-box p-6 md:p-12">
+                <h2 class="text-3xl font-bold text-center mb-6 text-gray-800">The Fundamentals: When to Use 'A/An' and 'The'</h2>
+                <div class="grid md:grid-cols-2 gap-8">
+                    <div class="bg-blue-50 p-6 rounded-lg">
+                        <h3 class="text-2xl font-bold text-blue-700">'A/An': Indefinite Article</h3>
+                        <ul class="mt-4 list-disc list-inside space-y-2 text-gray-700">
+                            <li>Used for singular, countable nouns when first mentioned or generic (e.g., a book, an apple).</li>
+                            <li>Choice based on the <strong class="font-semibold">sound</strong> of the next word (e.g., an hour, a university).</li>
+                            <li>Indicates "one of many."</li>
+                        </ul>
+                    </div>
+                    <div class="bg-purple-50 p-6 rounded-lg">
+                        <h3 class="text-2xl font-bold text-purple-700">'The': Definite Article</h3>
+                        <ul class="mt-4 list-disc list-inside space-y-2 text-gray-700">
+                            <li>Used for specific or already-mentioned nouns (e.g., the book I read, the sun).</li>
+                            <li>Applies to singular, plural, and uncountable nouns.</li>
+                            <li>Indicates "this specific one."</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slide 3: Common Pitfalls with 'A/An' -->
+            <div id="slide-3" class="card slide-hidden w-full slide-box p-6 md:p-12">
+                 <h2 class="text-3xl font-bold text-center mb-6 text-gray-800">Common Pitfalls with 'A/An'</h2>
+                 <div class="space-y-4 text-lg">
+                     <div class="p-4 bg-red-50 rounded-lg">
+                         <p class="font-bold text-red-700">Mistake 1: Using 'A/An' with Uncountable Nouns</p>
+                         <p><span class="text-red-500 line-through">Incorrect:</span> a furniture, an advice, a water.</p>
+                         <p><span class="text-green-600">Correct:</span> some furniture, some advice, a glass of water.</p>
+                     </div>
+                     <div class="p-4 bg-red-50 rounded-lg">
+                         <p class="font-bold text-red-700">Mistake 2: Using 'A/An' with Plural Nouns</p>
+                         <p><span class="text-red-500 line-through">Incorrect:</span> a cats, an interesting books.</p>
+                         <p><span class="text-green-600">Correct:</span> cats, some interesting books.</p>
+                     </div>
+                      <div class="p-4 bg-red-50 rounded-lg">
+                         <p class="font-bold text-red-700">Mistake 3: Incorrect 'A' vs 'An' Usage</p>
+                         <p><span class="text-red-500 line-through">Incorrect:</span> a hour, an unique idea.</p>
+                         <p><span class="text-green-600">Correct:</span> an hour, a unique idea (based on vowel <strong class="font-semibold">sound</strong>).</p>
+                     </div>
+                 </div>
+            </div>
+
+            <!-- Slide 4: Common Pitfalls with 'The' -->
+            <div id="slide-4" class="card slide-hidden w-full slide-box p-6 md:p-12">
+                <h2 class="text-3xl font-bold text-center mb-6 text-gray-800">Common Pitfalls with 'The'</h2>
+                 <div class="space-y-3 text-md">
+                     <div class="p-3 bg-red-50 rounded-lg">
+                         <p class="font-bold text-red-700">Mistake 1: Overusing 'The' with General Nouns</p>
+                         <p><span class="text-red-500 line-through">Incorrect:</span> The life is short, The money doesn't buy happiness.</p>
+                         <p><span class="text-green-600">Correct:</span> Life is short, Money doesn't buy happiness.</p>
+                     </div>
+                     <div class="p-3 bg-red-50 rounded-lg">
+                         <p class="font-bold text-red-700">Mistake 2: Missing 'The' with Unique Items/Superlatives</p>
+                         <p><span class="text-red-500 line-through">Incorrect:</span> sun rises in east, It's best movie.</p>
+                         <p><span class="text-green-600">Correct:</span> The sun rises in the east, It's the best movie.</p>
+                     </div>
+                     <div class="p-3 bg-red-50 rounded-lg">
+                         <p class="font-bold text-red-700">Mistake 3: Incorrect 'The' with Most Proper Nouns</p>
+                         <p><span class="text-red-500 line-through">Incorrect:</span> the London, the Mount Everest.</p>
+                         <p><span class="text-green-600">Correct:</span> London, Mount Everest.</p>
+                         <p class="text-sm mt-1 text-gray-600">Exceptions: the River Thames, the United Kingdom, the British Museum.</p>
+                     </div>
+                     <div class="p-3 bg-red-50 rounded-lg">
+                         <p class="font-bold text-red-700">Mistake 4: Missing 'The' with Geographic Features</p>
+                         <p><span class="text-red-500 line-through">Incorrect:</span> Pacific Ocean, Sahara Desert.</p>
+                         <p><span class="text-green-600">Correct:</span> the Pacific Ocean, the Sahara Desert.</p>
+                     </div>
+                 </div>
+            </div>
+
+            <!-- Slide 5: Reading Practice -->
+            <div id="slide-5" class="card slide-hidden w-full slide-box p-6 md:p-12">
+                <h2 class="text-3xl font-bold text-center mb-6 text-gray-800">Reading Practice: Article Correction</h2>
+                <p class="text-center mb-4">Read the text and correct the article mistakes. Type the correct article in the box.</p>
+                <div id="reading-exercise" class="text-lg leading-relaxed bg-gray-50 p-6 rounded-lg">
+                    <p>
+                        Yesterday, police arrested <span class="correction-wrapper"><input type="text" data-answer="a" class="quiz-input w-8"></span> man in connection with 
+                        <span class="correction-wrapper"><input type="text" data-answer="a" class="quiz-input w-8"></span> robbery. <span class="correction-wrapper"><input type="text" data-answer="The" class="quiz-input w-10"></span> man was caught near 
+                        <span class="correction-wrapper"><input type="text" data-answer="the" class="quiz-input w-10"></span> bank. He had <span class="correction-wrapper"><input type="text" data-answer="a" class="quiz-input w-8"></span> large bag with him. Local residents expressed concern about 
+                        crime in <span class="correction-wrapper"><input type="text" data-answer="the" class="quiz-input w-10"></span> area.
+                    </p>
+                </div>
+                <div class="text-center mt-6">
+                    <button id="check-reading-btn" class="bg-indigo-600 text-white font-bold py-2 px-6 rounded-lg hover:bg-indigo-700 transition-colors">Check Answers</button>
+                </div>
+                 <div id="reading-feedback" class="text-center mt-4 font-semibold"></div>
+            </div>
+
+            <!-- Slide 6: Listening Practice -->
+            <div id="slide-6" class="card slide-hidden w-full slide-box p-6 md:p-12">
+                <h2 class="text-3xl font-bold text-center mb-6 text-gray-800">Listening Practice: Fill the Gaps</h2>
+                <p class="text-center mb-4">Imagine you are listening to a dialogue. Fill in the blanks with 'a', 'an', or 'the'.</p>
+                <div id="listening-exercise" class="text-lg space-y-4 bg-gray-50 p-6 rounded-lg">
+                    <p>"I'm planning <input type="text" data-answer="a" class="quiz-input w-8"> trip to Edinburgh next month."</p>
+                    <p>"Have you found <input type="text" data-answer="a" class="quiz-input w-8"> good hotel yet?"</p>
+                    <p>"I prefer staying in <input type="text" data-answer="X" placeholder="X" class="quiz-input w-8"> small independent hotels, not <input type="text" data-answer="the" class="quiz-input w-10"> big chains."</p>
+                    <p>"We visited <input type="text" data-answer="the" class="quiz-input w-10"> National Museum of Scotland last time."</p>
+                    <p>"It's <input type="text" data-answer="an" class="quiz-input w-8"> amazing city for history lovers."</p>
+                </div>
+                 <div class="text-center mt-6">
+                    <button id="check-listening-btn" class="bg-indigo-600 text-white font-bold py-2 px-6 rounded-lg hover:bg-indigo-700 transition-colors">Check Answers</button>
+                </div>
+                <div id="listening-feedback" class="text-center mt-4 font-semibold"></div>
+                <p class="text-center text-sm mt-2 text-gray-600">(Use 'X' for no article)</p>
+            </div>
+
+            <!-- Slide 7: Free Practice -->
+            <div id="slide-7" class="card slide-hidden w-full slide-box p-6 md:p-12">
+                <h2 class="text-3xl font-bold text-center mb-6 text-gray-800">Free Practice: Your Turn!</h2>
+                <div class="grid md:grid-cols-2 gap-8">
+                    <div class="bg-blue-50 p-6 rounded-lg">
+                        <h3 class="text-xl font-bold text-blue-700">Task 1: Describe a Recent Experience</h3>
+                        <p class="mt-2 text-gray-700">Write 5-7 sentences about an interesting thing you did recently. Pay close attention to article use.</p>
+                        <textarea class="mt-4 w-full p-2 border rounded-lg h-40" placeholder="e.g., I went to a fantastic concert last weekend. The concert was held in a huge stadium..."></textarea>
+                    </div>
+                    <div class="bg-purple-50 p-6 rounded-lg">
+                        <h3 class="text-xl font-bold text-purple-700">Task 2: Debate a Topic</h3>
+                         <p class="mt-2 text-gray-700">Write a short paragraph on one of these topics:</p>
+                        <ul class="list-disc list-inside mt-2 text-gray-600">
+                            <li>What is the best way to learn a new language?</li>
+                            <li>Should governments focus more on environmental issues or economic growth?</li>
+                        </ul>
+                        <textarea class="mt-4 w-full p-2 border rounded-lg h-40" placeholder="e.g., I believe the best way to learn a new language is..."></textarea>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slide 8: Conclusion -->
+            <div id="slide-8" class="card slide-hidden w-full slide-box p-6 md:p-12">
+                <h2 class="text-3xl font-bold text-center mb-6 text-gray-800">Conclusion & Next Steps</h2>
+                <div class="text-lg space-y-4">
+                    <p class="p-4 bg-green-50 rounded-lg"><strong class="text-green-700">Key Takeaway:</strong> Article usage is nuanced; consistency and context are paramount.</p>
+                    <p class="p-4 bg-blue-50 rounded-lg"><strong class="text-blue-700">Remember:</strong> 'A/An' introduces, 'The' specifies. Zero article for general plural/uncountable nouns.</p>
+                    <div class="p-4 bg-yellow-50 rounded-lg">
+                        <h3 class="font-bold text-yellow-800">Continuous Improvement:</h3>
+                        <ul class="list-disc list-inside mt-2 space-y-1 text-gray-700">
+                            <li>Read widely in English, paying attention to how articles are used.</li>
+                            <li>Practise regularly through speaking and writing.</li>
+                            <li>Utilise online grammar checkers for initial error identification.</li>
+                            <li>Review common mistake lists periodically.</li>
+                        </ul>
+                    </div>
+                </div>
+                 <div class="mt-8 text-center">
+                    <p class="text-xl font-semibold text-indigo-800">Well done! You've completed the lesson.</p>
+                </div>
+            </div>
+
+        </main>
+
+        <!-- Navigation -->
+        <div class="flex justify-between items-center mt-6">
+            <button id="prev-btn" class="bg-white/80 text-indigo-600 font-bold py-3 px-6 rounded-lg hover:bg-white transition-all shadow-md disabled:opacity-50 disabled:cursor-not-allowed">
+                &larr; Previous
+            </button>
+            <div id="slide-counter" class="text-white font-semibold">1 / 8</div>
+            <button id="next-btn" class="bg-white/80 text-indigo-600 font-bold py-3 px-6 rounded-lg hover:bg-white transition-all shadow-md disabled:opacity-50 disabled:cursor-not-allowed">
+                Next &rarr;
+            </button>
+        </div>
+
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const slides = document.querySelectorAll('.card');
+            const prevBtn = document.getElementById('prev-btn');
+            const nextBtn = document.getElementById('next-btn');
+            const slideCounter = document.getElementById('slide-counter');
+            let currentSlide = 0;
+            const totalSlides = slides.length;
+
+            function updateButtons() {
+                prevBtn.disabled = currentSlide === 0;
+                nextBtn.disabled = currentSlide === totalSlides - 1;
+            }
+
+            function showSlide(index, direction = 'next') {
+                slides.forEach((slide, i) => {
+                    slide.classList.remove('slide-active', 'slide-hidden', 'slide-hidden-left');
+                    if (i === index) {
+                        slide.classList.add('slide-active');
+                    } else {
+                        if (i < index) {
+                             slide.classList.add('slide-hidden-left');
+                        } else {
+                             slide.classList.add('slide-hidden');
+                        }
+                    }
+                });
+                slideCounter.textContent = `${index + 1} / ${totalSlides}`;
+                updateButtons();
+            }
+            
+            nextBtn.addEventListener('click', () => {
+                if (currentSlide < totalSlides - 1) {
+                    currentSlide++;
+                    showSlide(currentSlide, 'next');
+                }
+            });
+
+            prevBtn.addEventListener('click', () => {
+                if (currentSlide > 0) {
+                    currentSlide--;
+                    showSlide(currentSlide, 'prev');
+                }
+            });
+
+            // --- Interactive Exercises ---
+
+            // Reading Exercise
+            const checkReadingBtn = document.getElementById('check-reading-btn');
+            const readingExercise = document.getElementById('reading-exercise');
+            const readingFeedback = document.getElementById('reading-feedback');
+
+            checkReadingBtn.addEventListener('click', () => {
+                const inputs = readingExercise.querySelectorAll('input');
+                let correctCount = 0;
+                inputs.forEach(input => {
+                    const userAnswer = input.value.trim().toLowerCase();
+                    const correctAnswer = input.dataset.answer.toLowerCase();
+                    input.classList.remove('correct', 'incorrect');
+                    if (userAnswer === correctAnswer) {
+                        input.classList.add('correct');
+                        correctCount++;
+                    } else {
+                        input.classList.add('incorrect');
+                    }
+                });
+                
+                if(correctCount === inputs.length) {
+                    readingFeedback.textContent = "Excellent! All answers are correct.";
+                    readingFeedback.className = 'text-center mt-4 font-semibold text-green-600';
+                } else {
+                    readingFeedback.textContent = `You got ${correctCount} out of ${inputs.length} correct. Try again!`;
+                    readingFeedback.className = 'text-center mt-4 font-semibold text-red-600';
+                }
+            });
+
+            // Listening Exercise
+            const checkListeningBtn = document.getElementById('check-listening-btn');
+            const listeningExercise = document.getElementById('listening-exercise');
+            const listeningFeedback = document.getElementById('listening-feedback');
+
+            checkListeningBtn.addEventListener('click', () => {
+                const inputs = listeningExercise.querySelectorAll('input');
+                let correctCount = 0;
+                inputs.forEach(input => {
+                    const userAnswer = input.value.trim().toLowerCase() || 'x';
+                    const correctAnswer = input.dataset.answer.toLowerCase();
+                    input.classList.remove('correct', 'incorrect');
+                    if (userAnswer === correctAnswer) {
+                        input.classList.add('correct');
+                        correctCount++;
+                    } else {
+                        input.classList.add('incorrect');
+                    }
+                });
+                
+                 if(correctCount === inputs.length) {
+                    listeningFeedback.textContent = "Perfect! All gaps filled correctly.";
+                    listeningFeedback.className = 'text-center mt-4 font-semibold text-green-600';
+                } else {
+                    listeningFeedback.textContent = `You got ${correctCount} out of ${inputs.length} correct. Keep trying!`;
+                    listeningFeedback.className = 'text-center mt-4 font-semibold text-red-600';
+                }
+            });
+
+
+            // Initialize
+            showSlide(currentSlide);
+        });
+    </script>
+</body>
+</html>
